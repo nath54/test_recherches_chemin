@@ -4,6 +4,10 @@ function generate_map() {
         document.getElementById("table").removeChild(child);
     }
     document.getElementById("table").innerHTML = null;
+    walls = [];
+    floors = [];
+    begin = null;
+    end = null;
     //
     var w = parseInt(document.getElementById("i_width").value);
     var h = parseInt(document.getElementById("i_height").value);

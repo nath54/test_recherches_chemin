@@ -10,11 +10,16 @@ function txt_to_case(txt) {
 }
 
 function clear_table() {
-    for (c of document.getElementsByClassName("case_parcouru")) {
-        c.classList.remove("case_parcouru");
-    }
-
-    for (c of document.getElementsByClassName("case_chemin")) {
-        c.classList.remove("case_chemin");
+    //
+    var w = parseInt(document.getElementById("i_width").value);
+    var h = parseInt(document.getElementById("i_height").value);
+    //
+    for (y = 0; y < h; y++) {
+        for (x = 0; x < w; x++) {
+            var t = case_to_txt(x, y);
+            var el = document.getElementById(t);
+            el.classList.remove("case_parcouru");
+            el.classList.remove("case_chemin");
+        }
     }
 }
