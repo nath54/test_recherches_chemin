@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Pathfinding algorithm tests</title>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body class="column">
+
+    <div class="row">
+
+        <div>
+
+            <table id="table">
+
+            </table>
+        </div>
+
+        <div class="column">
+
+            <h2>Edit map : </h2>
+            <div class="row">
+                <label>Width : </label>
+                <input type="number" id="i_width" />
+            </div>
+            <div class="row">
+                <label>Height : </label>
+                <input type="number" id="i_height" />
+            </div>
+            <div>
+                <button onclick="generate_map();">Generate</button>
+            </div>
+            <h3>Tiles</h3>
+            <div class="row">
+                <div class="column">
+                    <label>Floor</label>
+                    <button id="btfloor" onclick="tool=0;"></button>
+                </div>
+
+
+                <div class="column">
+                    <label>Wall</label>
+                    <button id="btwall" onclick="tool=1;"></button>
+                </div>
+
+
+                <div class="column">
+                    <label>Begining</label>
+                    <button id="btbegining" onclick="tool=2;"></button>
+                </div>
+
+
+                <div class="column">
+                    <label>End</label>
+                    <button id="btend" onclick="tool=3;"></button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="column">
+
+            <button onclick="astar();">Test A*</button>
+            <button onclick="dijkstra();">Test Dijkstra</button>
+
+        </div>
+
+
+    </div>
+
+    <div class="row">
+
+        <div class="column" id="res_astar" style="display: none;">
+            <h2>résultats A* : </h2>
+            <ul>
+                <li>Taille du chemin : <span id="astar_taille"></span></li>
+                <li>Cases parcourues : <span id="astar_parcourus"></span></li>
+            </ul>
+        </div>
+
+
+        <div class="column" id="res_dijkstra" style="display: none;">
+            <h2>résultats Dijkstra : </h2>
+            <ul>
+                <li>Taille du chemin : <span id="dijkstra_taille"></span></li>
+                <li>Cases parcourues : <span id="dijkstra_parcourus"></span></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+<script src="js/queue.js"></script>
+<script src="js/lib.js"></script>
+<script src="js/cases.js"></script>
+<script src="js/generate.js"></script>
+<script src="js/astar.js"></script>
+<script src="js/dijkstra.js"></script>
+
+</html>
